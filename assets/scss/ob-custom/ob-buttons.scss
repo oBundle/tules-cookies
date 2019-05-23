@@ -1,0 +1,32 @@
+.button{
+  font-size: 16px;
+  color:$color_white;
+  background:$color_primary;
+  border:1px solid $color_primary;
+  @include border-radius(20px);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 26px 11px;
+  line-height: normal;
+  @media only screen and (max-width:1023px){
+    padding: 9px 22px;
+    font-size: 14px;
+  }
+  &:hover, &:focus, &:active{
+    background:transparent;
+    border-color:$color_secondary;
+    color:$color_secondary;
+  }
+  &.button--primary{
+    background:transparent;
+    color:$color_secondary;
+    border-color:$color_secondary;
+    &:hover, &:focus, &:active{
+        background:$color_primary;
+        border-color:$color_primary;
+        color:$color_white;
+    }
+  }
+}
+
+

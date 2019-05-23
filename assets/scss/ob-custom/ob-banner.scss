@@ -1,0 +1,169 @@
+// =============================================================================
+//  pancil banner
+// =============================================================================
+
+.pancil-banner{
+    text-align: center;
+    padding: 7px 0;
+    @media only screen and (max-width:1023px){
+        padding: 7px 0;
+    }
+    p{
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: normal;
+        color: $color_secondary;
+        @media only screen and (max-width:1023px){
+            font-size: 16px;
+        }
+        @media only screen and (max-width:767px){
+            font-size: 14px;
+            line-height: normal;
+        }
+        span{
+            color: $color_red;
+        }
+    }
+}
+
+// =============================================================================
+//  Promo banner
+// =============================================================================
+
+.home-promotional-banner{
+    margin-bottom: 75px;
+    @media only screen and (max-width:1279px){
+        margin-bottom: 45px;
+    }
+    @media only screen and (max-width:767px){
+        margin-bottom: 20px;
+    }
+}
+.banner-block{
+    width: 33.33%;
+    padding: 0 15px;
+    @media only screen and (max-width:1279px){
+        padding: 0 10px;
+    }
+    @media only screen and (max-width:767px){
+        width: 100%;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    a{
+        position: relative;
+    }
+    img{
+        transition: all .5s ease 0s;
+        -webkit-transition: all .5s ease 0s;
+        -moz-transition: all .5s ease 0s;
+    }
+    .banner-hover{
+        &:hover{
+            img{
+                -webkit-transform: scale3d(1.05,1.05,1.05);
+                transform: scale3d(1.05,1.05,1.05);
+                transition: all .5s ease-in-out;
+                opacity: .8;
+            }
+        }
+    }
+}
+.pro-banner-wrp{
+    margin: 0 -15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    @media only screen and (max-width:1279px){
+        margin: 0 -10px;
+    }
+    @media only screen and (max-width:767px){
+        flex-flow: column;
+        text-align: center;
+        margin: 0;
+    }
+}
+.b-b-t{
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    @media only screen and (max-width:1279px){
+        margin-bottom: 20px;
+    }
+    @media only screen and (max-width:767px){
+        margin-bottom: 10px;
+    }
+    .banner-content{
+        top: auto;
+        left: auto;
+        right: 30px;
+        bottom: 20px;
+        @media only screen and (max-width:1023px){
+            right: 10px;
+            bottom: 0px;
+        }
+        @media only screen and (max-width:767px){
+            right: 30px;
+            bottom: 20px;
+        }
+    }
+}
+.b-b-b, .b-b-f{
+    overflow: hidden;
+    position: relative;
+}
+.b-b-b{
+    .banner-content{
+        max-width: 200px;
+    }
+}
+
+.banner-content{
+    position: absolute;
+    top: 30px;
+    left: 42px;
+    max-width: 320px;
+    @media only screen and (max-width:1279px){
+        top: 20px;
+        left: 32px;
+        max-width: 220px;
+    }
+    @media only screen and (max-width:1023px){
+        top: 10px;
+        left: 10px;
+        max-width: 100%;
+    }
+    @media only screen and (max-width:767px){
+        top: 20px;
+        left: 32px;
+        max-width: 220px;
+        text-align: left;
+    }
+    h3{
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $color_secondary;
+        margin-bottom: 20px;
+        line-height: 38px;
+        @media only screen and (max-width:1279px){
+            line-height: 28px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        @media only screen and (max-width:1023px){
+            font-size: 18px;
+            line-height: normal;
+        }
+    }
+    .button{
+        font-size: 12px;
+        padding: 7px 15px 8px;
+    }
+}

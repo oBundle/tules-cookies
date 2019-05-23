@@ -1,0 +1,45 @@
+<nav class="navPages">
+    <div class="navPages-quickSearch">
+        {{> components/common/quick-search}}
+    </div>
+    <ul class="navPages-list sf-menu">
+        {{> components/ob-custom/ob-navigation-hardcode}}
+    </ul>
+    <ul class="navPages-list navPages-list--user">
+        {{#if currency_selector.currencies.length '>' 1}}
+            <li class="navPages-item">
+                <a class="navPages-action has-subMenu" href="#" data-collapsible="navPages-currency" aria-controls="navPages-currency" aria-expanded="false">
+                    {{lang 'common.currency' code=currency_selector.active_currency_code}} <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-down"></use></svg></i>
+                </a>
+                <div class="navPage-subMenu" id="navPages-currency" aria-hidden="true" tabindex="-1">
+                    <ul class="navPage-subMenu-list">
+                        {{#each currency_selector.currencies}}
+                        <li class="navPage-subMenu-item">
+                            <a class="navPage-subMenu-action navPages-action" href="{{{switch_url}}}">
+                                {{#if is_active}}
+                                    <strong>{{name}}</strong>
+                                {{else}}
+                                    {{name}}
+                                {{/if}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+        {{/if}}
+        {{#if settings.gift_certificates_enabled}}
+            <li class="navPages-item">
+                <a class="navPages-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+            </li>
+        {{/if}}
+        {{#if customer.store_credit.value '>' 0}}
+            <li class="navPages-item">
+                <a class="navPages-action navPages-action--storeCredit">
+                    {{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}
+                </a>
+            </li>
+        {{/if}}
+   
+    </ul>
+</nav>

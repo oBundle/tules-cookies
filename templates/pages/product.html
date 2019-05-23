@@ -1,0 +1,52 @@
+---
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_related_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_similar_by_views_count}}
+---
+{{#partial "page"}}
+    <div class="no-heading">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+
+    {{#each product.shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+
+    <div itemscope itemtype="http://schema.org/Product">
+        {{> components/products/product-view schema=true  }}
+
+        {{#if product.videos.list.length}}
+            {{> components/products/videos product.videos}}
+        {{/if}}
+
+        <div class="clearfix"></div>
+            
+        {{#if product.related_products}}
+            <div class="related-product">
+                <div class="home-section-heading text-center">
+                    <!-- <img src="{{cdn 'assets/img/heading-top-img.png'}}" alt="">      -->
+                    <h2 class="page-heading home-heading">{{lang 'products.related_products'}}</h2>
+                </div>
+                    {{> components/products/product-page-carousel products=product.related_products columns=5}}
+            </div>
+        {{/if}}
+
+        {{#if product.similar_by_views}}
+            <div class="similar-by-views">
+                <div class="home-section-heading text-center">
+                    <!-- <img src="{{cdn 'assets/img/heading-top-img.png'}}" alt="">      -->
+                    <h2 class="page-heading home-heading">{{lang 'products.similar_by_views'}}</h2>
+                </div>
+                    {{> components/products/product-page-carousel products=product.similar_by_views columns=5}}
+            </div>
+        {{/if}}
+
+    </div>
+{{/partial}}
+{{> layout/base}}

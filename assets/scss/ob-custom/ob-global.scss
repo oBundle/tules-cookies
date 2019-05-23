@@ -1,0 +1,371 @@
+// =============================================================================
+//  Base css
+// =============================================================================
+
+html { -webkit-font-smoothing:antialiased; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100% }
+body { -webkit-font-smoothing: subpixel-antialiased;-moz-osx-font-smoothing: auto;font-size:14px;font-weight: normal;padding-top:0; font-family:'Lato', sans-serif;color:$color_font_color;
+  @media only screen and (max-width:1279px){
+    font-size: 14px;
+  }
+}
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+*:before, *:after { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.clearfix:before, .clearfix:after, .container:before, .container:after, .row:before, .row:after, .nav:before, .nav:after { display:table; content:" "; }
+.clearfix:after, .container:after, .row:after, .nav:after { clear:both; }
+
+
+[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"],
+[type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"],
+[type="time"], [type="url"], [type="color"], textarea, .form-select{ font-size: 14px; }
+
+input[type="checkbox"], input[type="radio"]{
+  vertical-align: middle;
+  margin-top:-1px;
+}
+
+select{ outline: none; }
+select option{ padding: 4px 8px; font-size: 13px; outline: none; }
+
+textarea{ resize: none; line-height: 18px; }
+
+
+::-webkit-input-placeholder {color:$color_placeholder!important;opacity:1;font-size: 14px;}
+::-moz-placeholder {color: $color_placeholder !important;opacity:1;font-size: 14px;}
+:-ms-input-placeholder {color:$color_placeholder!important;opacity:1;font-size: 14px;}
+:-moz-placeholder {color:$color_placeholder!important;opacity:1;font-size: 14px;}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Lato', sans-serif;
+  color: $color_font_color;
+  margin-top: 0;
+}
+
+h1{font-size: 50px;}
+h2{font-size: 32px;}
+h3{font-size: 28px;}
+h4{font-size: 26px;}
+h5{font-size: 22px;}
+h6{font-size: 21px;}
+
+@media only screen and (max-width:1023px){
+  h1{font-size: 40px;}
+  h2{font-size: 28px;}
+  h3{font-size: 26px;}
+  h4{font-size: 22px;}
+  h5{font-size: 20px;}
+  h6{font-size: 18px;}
+}
+@media only screen and (max-width:767px){
+  h1{font-size: 32px;}
+  h2{font-size: 26px;}
+  h3{font-size: 24px;}
+  h4{font-size: 22px;}
+  h5{font-size: 20px;}
+  h6{font-size: 18px;}
+}
+@media only screen and (max-width:479px){
+  h1{font-size: 28px;}
+  h2{font-size: 22px;}
+  h3{font-size: 20px;}
+  h4{font-size: 18px;}
+  h5{font-size: 16px;}
+  h6{font-size: 16px;}
+}
+
+p{
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: normal;
+}
+a{
+  text-decoration: none;
+  color:$color_primary;
+  outline: none;
+  &:hover, &:focus{
+    color:$color_font_color;
+    outline: none;
+  }
+}
+
+strong, b{ font-weight: 600; }
+
+ul, ol{ margin-left: 20px; margin-bottom: 20px; }
+
+img{ max-width: 100%; vertical-align: middle; }
+
+hr{
+  border-color: $color_border; margin: 30px 0;
+}
+
+/* ==================== FORM ELEMENT STYLE ==================== */
+
+.form-input{
+  border: 1px solid $color_border; @include border-radius(25px); line-height: 18px; padding: 11px 20px;
+  font-size: 14px; height: auto; color: $body-font-color; outline: none;
+
+  &:focus{
+    border-color: darken($color_border, 5%);
+  }
+}
+
+.form-input::-webkit-input-placeholder {
+  color: lighten($color_font_color, 30%); opacity: 1;
+}
+.form-input::-moz-placeholder {
+  color: lighten($color_font_color, 30%); opacity: 1;
+}
+.form-input:-ms-input-placeholder {
+  color: lighten($color_font_color, 30%); opacity: 1;
+}
+.form-input:-moz-placeholder {
+  color: lighten($color_font_color, 30%); opacity: 1;
+}
+
+.form-field-group, .form-row .form-field-group{
+  border: 1px solid $color_border; @include border-radius(25px); padding: 20px;
+}
+
+.form-select{
+  height: 42px; line-height: 40px; padding: 0 20px 0 15px; font-size: 14px; vertical-align: middle;
+  background-size: 20px; background-position: right 10px center; border: 1px solid $color_border;
+  @include border-radius(25px); color: $color_font_color; outline: none;
+  &.form-select-small{
+    height: 30px; line-height: 30px; background-position: right 5px top 7px; padding-left: 10px;
+  }
+}
+
+
+
+.body{
+  margin-bottom:60px;
+  @media only screen and (max-width:1023px) {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width:1023px) {
+  .default_page{
+    .body{
+      margin-top: 0;
+    }
+  }
+}
+
+.page-heading{
+  color:$color_font_color;
+  font-weight: bold;
+  font-size: 28px;
+  margin: 0 0 30px;
+  line-height:normal;
+  text-transform:capitalize;
+  text-align: center;
+  border-bottom: 1px solid $color_border;
+  padding-bottom: 20px;
+  &.home-heading{
+    font-size: 32px;
+    color: $color_secondary;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0px;
+    font-weight: 900;
+    @media only screen and (max-width:1365px){
+      font-size: 28px;
+    }
+    @media only screen and (max-width:1023px){
+      font-size: 24px;
+    }
+    @media only screen and (max-width:767px){
+      font-size: 22px;
+    }
+  }
+}
+.home-section-heading{
+  margin-bottom: 30px;
+  @media only screen and (max-width:767px){
+    margin-bottom: 0;
+  }
+  h2{
+    margin-bottom: 0;
+  }
+  img{
+    margin-bottom: 3px;
+  }
+  span{
+    font-family: 'Playball', cursive;
+    font-size: 22px;
+    color: $color_primary;
+  }
+}
+.no-heading{
+  border-bottom: 1px solid $color_border;
+  padding-bottom: 10px;
+  margin: 0 0 30px;
+  &.error-page{
+    border-bottom: none;
+  }
+  @media only screen and (max-width:1023px){
+    padding-bottom: 0;
+  }
+  @media only screen and (max-width:567px){
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0;
+  @media only screen and (max-width:1470px){
+    // 1440 view
+    max-width: 1400px;
+  }
+  @media only screen and (max-width:1439px){
+    // 1366 view
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  @media only screen and (max-width:767px){
+    padding: 0 10px;
+  }
+}
+
+svg{
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width:1279px){
+  .slick-prev{
+    left: 0;
+  }
+  .slick-next{
+    right: 0;
+  }
+}
+
+.clear{
+  clear: both;
+}
+
+.text-left{ text-align: left; }
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+
+
+.p-l-15{
+  padding-left: 15px;
+}
+.p-r-15{
+  padding-right: 15px;
+}
+.p-b-15{
+  padding-bottom: 15px;
+}
+.p-t-15px{
+  padding-top: 15px;
+}
+.m-t-30{
+  margin-top: 30px;
+}
+.m-b-30{
+  margin-bottom: 30px;
+}
+.m-t-rem{
+  margin-top: 2.5rem;
+  @media only screen and (max-width:567px){
+    margin-top: 1.5rem;
+  }
+}
+
+.d-flex{
+  @include display-flex(flex);
+}
+.align-v-center{
+  @include align-item(center);
+}
+.align-start{
+  @include align-item(flex-start);
+}
+.align-end{
+  @include align-item(flex-end);
+}
+.align-self-start{
+  @include align-self(flex-start);
+}
+.justify-center{
+  @include justify-content(center);
+}
+.justify-right{
+  @include justify-content(flex-end);
+}
+.justify-space{
+  @include justify-content(space-between);
+}
+.flex-wrap{
+  @include flex-wrap(wrap);
+}
+.flex-direction{
+  @include flex-direction(column);
+}
+
+
+// =============================================================================
+//  media list
+// =============================================================================
+
+// 1440
+@media only screen and (max-width:1470px){}
+
+// 1366
+@media only screen and (max-width:1439px){}
+
+// 1280
+@media only screen and (max-width:1365px){}
+
+// 1024
+@media only screen and (max-width:1279px){}
+
+// 768
+@media only screen and (max-width:1023px){}
+
+// 568
+@media only screen and (max-width:767px){}
+
+// 480
+@media only screen and (max-width:567px){}
+
+// 320
+@media only screen and (max-width:479px){}
+
+
+// =============================================================================
+//  Admin Bar
+// =============================================================================
+
+.adminBar, .maintenanceNotice {
+    display: none !important;
+}
+body.hasAdminBar .banners {
+    margin-top: 0;
+}
+
+body.hasAdminBar .header {
+    padding-top: 0;
+}
+
+body.hasAdminBar {
+    padding-top: 0;
+}
+
+@media only screen and (max-width:767px){
+  .page{
+    margin: 0;
+  }
+  .page-content, .page-content--full{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+    

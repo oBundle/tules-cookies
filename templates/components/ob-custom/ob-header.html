@@ -1,0 +1,50 @@
+{{> components/ob-custom/ob-mobile-menu}}
+<header class="header" role="banner">
+        <div class="container">
+            {{> components/ob-custom/ob-pencil-banner}}
+        </div>
+
+        <div class="header-full">
+            
+            <div class="container">
+                <div class="header-wrp">
+                    <div class="mobileMenu-btn">
+                        <a href="javascript:void(0);" class="mobile-menu-btn align-center">
+                            <span><svg><use xlink:href="#icon-ResponsiveMenu"></use></svg></span>
+                        </a>
+                    </div>
+                    <div class="header-logo-wrp">
+                        <div class="logo-desktop">
+                            {{#if page_type '===' 'default'}}
+                                <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                                    {{> components/common/store-logo}}
+                                </h1>
+                            {{else}}
+                                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                                    {{> components/common/store-logo}}
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="logo-mobile">
+                            <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                                {{> components/ob-custom/ob-store-logo-mobile}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-menu-wrp">
+                        <div class="navPages-container" id="menu" data-menu>
+                            {{> components/ob-custom/ob-navigation-menu}}
+                        </div>
+                    </div>
+                    <div class="navigation-wrp">
+                        {{> components/ob-custom/ob-navigation}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        {{{region name="header_bottom"}}}
+        
+    
+</header>

@@ -1,0 +1,23 @@
+
+{{#if theme_settings.instagramKey}}
+<article class="instagram clearfix" data-section-type="storeInfo">
+  <div class="container">
+    <div class="home-section-heading text-center">
+        <!-- <img src="{{cdn 'img/heading-top-img.png'}}" alt="">      -->
+        <h2 class="page-heading home-heading">#Tule’s Cookies</h2>
+        <!-- <span>Best Collections</span> -->
+    </div>
+      <div class="home-instagram align-center insta-contain">
+          <div class="insta-block clearfix">
+            {{#if theme_settings.instagramKey}}
+              <div id="instafeed" class="clearfix"
+              data-id="{{#withFirst (split theme_settings.instagramKey '.')}}{{this}}{{/withFirst}}"
+              data-key="{{theme_settings.instagramKey}}"
+              data-loading="{{cdn 'img/loading.svg'}}">
+              </div>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+</article>
+{{/if}}

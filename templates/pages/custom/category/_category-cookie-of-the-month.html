@@ -1,0 +1,49 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{{snippet 'categories'}}}
+
+<div class="no-heading m-t-rem">
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+</div>
+
+<div class="productView custom-category-page">
+    <section class="productView-images">
+        <figure class="productView-image">
+            <div class="productView-img-container">
+                    <img class="lazyload productView-image--default" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage category.image 'zoom_size'}}">
+            </div>
+            <div class="productView-seal-image">
+                <img src="{{cdn 'img/seal-logo.png'}}" alt="">
+            </div>
+        </figure>
+    </section>
+    <section class="productView-details">
+           {{{category.description}}}
+           
+           <div class="bulk-edit-block">
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}">
+                <div class="bulk-edit-block-section">
+
+                </div>
+           </div>
+    </section>
+</div>
+
+{{/partial}}
+{{> layout/base}}

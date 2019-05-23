@@ -1,0 +1,1 @@
+{"components/ob-custom/ob-pencil-banner":"<div class=\"pancil-banner\">\r\n    <div class=\"container\">\r\n        <div class=\"pancil-banner-text align-center\">\r\n            <p><span>{{theme_settings.pencil-banner-red-text}}:</span> {{theme_settings.pencil-banner-text}}</p>\r\n        </div>\r\n    </div> \r\n </div>\r\n"}

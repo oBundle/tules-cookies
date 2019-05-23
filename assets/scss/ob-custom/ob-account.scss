@@ -1,0 +1,26 @@
+/*======Login page style============*/
+
+.login {
+	margin: 0;
+	max-width: 100%;
+}
+.login-form{
+    .form-actions .button, .form-actions input, .form-actions a{
+        vertical-align: middle;
+    }
+    .form-actions{
+        text-align: left;
+    }
+}
+
+.navBar--sub .navBar-item.is-active{
+    color: $color_primary;
+    border-bottom-color:$color_primary; 
+}
+.account{
+    .productGrid{
+        li{
+            padding: 15px;
+        }
+    }
+}

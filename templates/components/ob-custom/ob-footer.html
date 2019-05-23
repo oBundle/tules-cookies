@@ -1,0 +1,147 @@
+
+{{> components/ob-custom/ob-instagram}}
+
+{{> components/ob-custom/ob-newsletter}}
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-wrp">
+            <article class="footer-info-col footer-logo">
+                {{#if page_type '===' 'default'}}
+                    <div class="header-logo">
+                        {{> components/common/store-logo}}
+                    </div>
+                {{else}}
+                    <div class="header-logo">
+                        {{> components/common/store-logo}}
+                    </div>
+                {{/if}}
+            </article>
+
+            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
+                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
+                <ul class="footer-info-list">
+                    <li>
+                        <a href="/cookie-of-the-month/">Featured Cookie-of-the-Month</a>
+                    </li>
+                    <li>
+                        <a href="/fresh-from-the-oven/">Fresh from the Oven</a>
+                    </li>
+                    <li>
+                        <a href="/granola-plans">Granola Plans</a>
+                    </li>
+                    <li>
+                        <a href="/special-occasions-corporate-gifts/">Special Occasions & Corporate Gifts</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
+                <ul class="footer-info-list">
+                    <li>
+                        <a href="/our-story/">About</a>
+                    </li>
+                    <li>
+                        <a href="/our-story/">Our Story</a>
+                    </li>
+                    <li>
+                        <a href="/cookie-archive/">Cookie Archive</a>
+                    </li>
+                    <li>
+                        <a href="/frequently-asked-questions/">Frequently Asked Questions</a>
+                    </li>
+                    <li>
+                        <a href="/shipping-information/">Shipping Information</a>
+                    </li>
+                    <li>
+                        <a href="/our-guarantee/">Our Guarantee</a>
+                    </li>
+                    <li>
+                        <a href="/contact-us/">Contact Us</a>
+                    </li>
+                </ul>
+            </article>
+
+            {{#if settings.address}}
+                <article class="footer-info-col footer-info-col--small footer-store-info" data-section-type="storeInfo">
+                    <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
+                    
+                    <div class="footer-phone-number">
+                        {{#if settings.phone_number}}
+                            <!-- <sapn><svg><use xlink:href="#icon-f-phone"></use></svg>{{lang 'footer.call_us' phone_number=settings.phone_number}}</span> -->
+                                <a href="tel:{{settings.phone_number}}"><span> <svg><use xlink:href="#icon-answer"></use></svg> {{lang 'footer.call_us' phone_number=settings.phone_number}}</span></a>
+                        {{/if}}
+                    </div>
+                    
+                    <div class="f-email">
+                        <a href="mailto:sweets@tulescookies.com"><span> <svg><use xlink:href="#icon-email-icon"></use></svg> sweets@tulescookies.com </span></a>
+                    </div>
+                    
+                    <!-- <address>{{nl2br settings.address}}</address> -->
+                </article>
+            {{/if}}
+
+        </div>
+
+        <div class="footer-copyright-wrp">
+            {{#if theme_settings.show_copyright_footer}}                  
+                <div class="footer-copyright f-b-b">
+                    <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}}, All Rights Reserved. </p>
+                </div>
+            {{/if}}
+            <div class="footer-social-icon f-b-b text-center">
+                    {{> components/common/social-links}}
+            </div>
+            <div class="footer-right f-b-b text-right">
+                <p class="powered-by">
+                    <a href="#">Terms & Conditions</a> |
+                    <a href="/shipping-information/">Shipping & Returns </a> |
+                    <a href="/privacy-security/">Privacy Policy</a> |
+                    <a href="{{urls.sitemap}}">Sitemap</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                data-section-type="footer-webPages">
+                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+                    {{> components/common/social-links}}
+            </article>
+        {{/if}}
+
+
+        <section class="footer-info">
+
+            <!-- {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+            <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
+                <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
+                <ul class="footer-info-list">
+                    {{#each shop_by_brand}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                </ul>
+            </article>
+            {{/and}} -->
+
+            
+            {{> components/common/payment-icons}}   
+        </section>
+        {{#if theme_settings.geotrust_ssl_common_name}}
+            <div class="footer-geotrust-ssl-seal">
+                {{> components/common/geotrust-ssl-seal}}
+            </div>
+        {{/if}}
+        
+        
+    </div>
+</footer>
