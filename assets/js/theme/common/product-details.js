@@ -5,6 +5,7 @@ import ImageGallery from '../product/image-gallery';
 import modalFactory, { showAlertModal } from '../global/modal';
 import _ from 'lodash';
 import Wishlist from '../wishlist';
+import fancyboxproduct from '../ob-custom/ob-fancybox';
 
 export default class ProductDetails {
     constructor($scope, context, productAttributesData = {}) {
@@ -54,6 +55,8 @@ export default class ProductDetails {
         $productOptionsElement.show();
 
         this.previewModal = modalFactory('#previewModal')[0];
+
+        fancyboxproduct();
     }
 
     /**

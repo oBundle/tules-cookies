@@ -1,43 +1,26 @@
 /* eslint-disable */
-import $ from 'jquery';
 import superfish from 'superfish/src/js/superfish';
 
 export default function() {
 
-  
+  $('.userSummary, .navPages .navPages-list').superfish({
+      delay: 8,
+      speed: "fast"
+  });
 
-jQuery(document).ready(function() {
+  /* MOBILE MENU SCRIPT */
 
-    jQuery('.userSummary, .navPages .navPages-list').superfish({
-        delay: 8,
-        speed: "fast"
+  $(".mobile-menu-btn").click(function () {
+      $("body").addClass("mobile-menu-open");
     });
 
-    /* MOBILE MENU SCRIPT */
+    $(".mobile-menu-close-btn a").click(function () {
+      $("body").removeClass("mobile-menu-open");
+    });
 
-    jQuery(".mobile-menu-btn").click(function () {
-        jQuery("body").addClass("mobile-menu-open");
-      });
-  
-      jQuery(".mobile-menu-close-btn a").click(function () {
-        jQuery("body").removeClass("mobile-menu-open");
-      });
-  
-      jQuery(".menu-open-overlay").click(function () {
-        jQuery("body").removeClass("mobile-menu-open");
-      });
-
-
-}); // Ready End
-
-
-jQuery(window).resize(function() {
- 
-});
-
-jQuery(document).ajaxComplete(function() {
-
-});
+    $(".menu-open-overlay").click(function () {
+      $("body").removeClass("mobile-menu-open");
+    });
 
 }
 /* eslint-enable */

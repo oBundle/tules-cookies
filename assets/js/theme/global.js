@@ -16,8 +16,6 @@ import loadingProgressBar from './global/loading-progress-bar';
 import svgInjector from './global/svg-injector';
 // oBundle custom imports
 import sfmenu from './ob-custom/ob-sfmenu';
-import instafeed from './ob-custom/ob-instafeed';
-import fancyboxproduct from './ob-custom/ob-fancybox';
 
 export default class Global extends PageManager {
     onReady() {
@@ -39,7 +37,5 @@ export default class Global extends PageManager {
         loadingProgressBar();
         svgInjector();
         sfmenu();
-        instafeed();
-        fancyboxproduct();
     }
 }

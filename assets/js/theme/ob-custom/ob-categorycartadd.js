@@ -1,9 +1,6 @@
 /* eslint-disable */
-import $ from 'jquery';
 
 export default function () {
-
-  $(document).ready(function () {
 
     $(document).on('click', '.qtybox_wrap .inc', function () {
       var incval = parseInt($(this).next().val()) + 1;
@@ -137,8 +134,6 @@ export default function () {
       const updateUrl = getUrlBeforeQty + this.value;
       $addToCartLink.attr('href', updateUrl);
     });
-
-  });
 
 }
 /* eslint-unable */
