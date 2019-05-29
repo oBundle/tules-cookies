@@ -22,5 +22,13 @@ export default function() {
       $("body").removeClass("mobile-menu-open");
     });
 
+    $(".tab.cookie-archive-tab").click(function () {
+      if(!$('#tab-cookie-archive #allProducts').length){
+        $('#tab-cookie-archive').load("/cookie-archive #allProducts");
+      }
+    });
+
+    
+
 }
 /* eslint-enable */

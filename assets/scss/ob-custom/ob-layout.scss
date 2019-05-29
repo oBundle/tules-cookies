@@ -875,3 +875,106 @@ body.mobile-menu-open{
 .inner-page-heading{
     min-height:165px;
 }
+
+
+// page custom template
+
+#allProducts{
+    h2{
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    ul{
+        margin: 0 -10px;
+        @include display-flex(flex);
+        flex-direction: row;
+        @include flex-wrap(wrap);
+        justify-content: flex-start;
+        li{
+            width: 25%;
+            // float: left;
+            list-style: none;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            @media only screen and (max-width:1280px){
+                width: 33.33%;
+            }
+            @media only screen and (max-width:1023px){
+                width: 33.33%;
+            }
+            @media only screen and (max-width:567px){
+                width: 50%;
+            }
+            a{
+                display: block;
+                margin-bottom: 10px;
+            }
+            span{
+                display: block;
+                color: $color_primary;
+            }
+        }
+    }
+}
+.SpecialOccasions.productView{
+    .productView-img-container{
+        padding: 0;
+    }
+    .productView-images, .productView-details{
+        width: 40%;
+        @media only screen and (max-width:1023px){
+            width: 100%;
+        }
+    }
+    .left-cnt{
+        float: left;
+    }
+}
+.custom-category-page.SpecialOccasions .productView-images .productView-image .productView-img-container{
+    padding: 0;
+}
+
+#InquireForm{
+    background: #e0c6b7;
+    padding: 30px;
+}
+.page-with-sidebar{
+    .left-cnt{
+        width: 20%;
+        float: left;
+        padding: 0 10px;
+        @media only screen and (max-width:1023px){
+            width: 100%;
+            float: none;
+        }
+    }
+    .right-cnt{
+        width: 80%;
+        float: left;
+        padding: 0 10px;
+        @media only screen and (max-width:1023px){
+            width: 100%;
+            float: none;
+        }
+    }
+}
+.page-cnt-main{
+    margin: 0 -10px;
+}
+#inquire-form{
+    background: rgba(59,35,20,0.5);
+    .modal-header-title{
+        color: $color_white;
+    }
+    p{
+        color: $color_white;
+        &.m-b-30{
+            margin-bottom: 30px;
+        }
+    }
+    .modal-close{
+        color: $color_white;
+    }
+}

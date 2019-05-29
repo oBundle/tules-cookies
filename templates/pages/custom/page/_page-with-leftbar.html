@@ -1,0 +1,51 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page page-with-sidebar">
+    {{#unless theme_settings.hide_page_heading }}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {{/unless}}
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    
+    <div class="page-content clearfix">
+        
+            <!-- <p>{{{page.content}}}</p> -->
+            <div class="page-cnt-main">
+                <p>{{{page.content}}}</p>
+                    <!--<section class="left-cnt">-->
+                    <!--        <p>Customized packages showcase the highest standards of quality we value. Your guests, clients, or employees will be delighted with the delicious selection we create for any occasion. Choose from our cookie collection, and our best-selling Alfalfa Honey Granola,.</p>-->
+                    <!--    </section>-->
+                    <!--    <section class="right-cnt">-->
+                            
+                    <!--    </section>-->
+            </div>
+            
+       
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -227,19 +227,27 @@
 }
 .productView{
     .productView-image{
-        border: 1px solid $color_border;
-        padding: 10px;
-
+        // border: 1px solid $color_border;
+        // padding: 10px;
+    }
+    .left-cnt{
+        width: 20%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        @media only screen and (max-width:1023px){
+            width: 100%;
+            padding: 0;
+        }
     }
     .productView-images{
-        width: 45%;
+        width: 50%;
         @media only screen and (max-width:1023px){
             width: 100%;
             padding: 0;
         }
     }
     .productView-details{
-        width: 55%;
+        width: 50%;
         @media only screen and (max-width:1023px){
             width: 100%;
         }

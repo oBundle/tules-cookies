@@ -1,0 +1,79 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page">
+    {{#unless theme_settings.hide_page_heading }}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {{/unless}}
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    <div class="page-content page-content--centered">
+        <!-- {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            <p>{{{page.content}}}</p>
+        {{/replace}} -->
+        <div id="allProducts">
+            <h2>visit our <a href="/fresh-from-the-oven/">fresh from the oven page</a> for current selections available to purchase</h2>
+            <ul class="">
+                <li><a href="#"><img src="/content/catimages/onexones.jpg" /></a><span>One x one's</span></li>
+                <li><a href="#"><img src="/content/catimages/apricotribbons.jpg" /></a><span>apricot ribbons</span></li>
+                <li><a href="#"><img src="/content/catimages/autumngingerbread.jpg" /></a><span>autumn gingerbread</span></li>
+                <li><a href="#"><img src="/content/catimages/blackforestswirl.png" /></a><span>black forest swirl</span></li>
+                
+                <li><a href="#"><img src="/content/catimages/caramelpieces.jpg" /></a><span>caramel pieces</span></li>
+                <li><a href="#"><img src="/content/catimages/chamboardmarshmellows.jpg" /></a><span>chambord marshmallows</span></li>
+                <li><a href="#"><img src="/content/catimages/chocolateorangebiscotti.jpg" /></a><span>chocolate orange biscotti</span></li>
+                <li><a href="http://tulescookies.com/products/chocolate-pockets.html"><img src="/content/catimages/chocolatepockets.jpg" /></a><span>chocolate pockets</span></li>
+                
+                <li><a href="#"><img src="/content/catimages/coconutcaramelmounds.jpg" /></a><span>coconut caramel mounds</span></li>
+                <li><a href="#"><img src="/content/catimages/cranberryalmondthins.jpg" /></a><span>cranberry almond thins</span></li>
+                <li><a href="#"><img src="/content/catimages/fudgesandwichcookies.jpg" /></a><span>fudge sandwhich cookies</span></li>
+                <li><a href="#"><img src="/content/catimages/gingerbreadbunnies.jpg" /></a><span>gingerbread bunnies</span></li>
+                
+                <li><a href="#"><img src="/content/catimages/gingerbreadfamily.jpg" /></a><span>gingerbread family</span></li>
+                <li><a href="#"><img src="/content/catimages/hawaiiantiles.jpg" /></a><span>hawaiian tiles</span></li>
+                <li><a href="http://tulescookies.com/products/macadamia-toffee-crunch.html"><img src="/content/catimages/macadamiatoffeecrunch.jpg" /></a><span>macadamia toffee crunch</span></li>
+                <li><a href="#"><img src="/content/catimages/pnuttyfudgesandwichcookies.jpg" /></a><span>p-nutty fudge sandwich cookies</span></li>
+                
+                <li><a href="#"><img src="/content/catimages/pnuttysquares.jpg" /></a><span>p-nutty squares</span></li>
+                <li><a href="http://tulescookies.com/products/p-nutty-stuffed-squares.html"><img src="/content/catimages/pnuttystuffedsquares.jpg" /></a><span>p-nutty stuffed squares</span></li>
+                <li><a href="#"><img src="/content/catimages/peppergingersnaps.jpg" /></a><span>pepper ginger snaps</span></li>
+                <li><a href="#"><img src="/content/catimages/pistachiochocolatebiscotti.jpg" /></a><span>pistachio chocolate biscotti</span></li>
+                
+                <li><a href="http://tulescookies.com/products/raspberry-ribbons.html"><img src="/content/catimages/rasberryribbons.jpg" /></a><span>rasberry ribbons</span></li>
+                <li><a href="http://tulescookies.com/products/salted-caramel-chews.html"><img src="/content/catimages/saltedcaramelcrews.jpg" /></a><span>salted caramel chews</span></li>
+                <li><a href="http://tulescookies.com/products/shortbread-buttons.html"><img src="/content/catimages/shortbreadbuttons.jpg" /></a><span>shortbread buttons</span></li>
+                <li><a href="#"><img src="/content/catimages/tripplechocolatebiscotti.jpg" /></a><span>triple chocolate biscotti</span></li>
+                
+                <li><a href="#"><img src="/content/catimages/vanillamarshmellows.jpg" /></a><span>vanilla marshmallows</span></li>
+                <li><a href="#"><img src="/content/catimages/whoopiepies.jpg" /></a><span>whoopie pies</span></li>
+            </ul>
+        </div>
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,84 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page">
+    {{#unless theme_settings.hide_page_heading }}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {{/unless}}
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    <div class="page-content">
+        <!-- {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            <p>{{{page.content}}}</p>
+        {{/replace}} -->
+
+        <div class="productView custom-category-page SpecialOccasions">
+                <!-- {{{page.content}}} -->
+            <section class="left-cnt">
+                <p>Customized packages showcase the highest standards of quality we value. Your guests, clients, or employees will be delighted with the delicious selection we create for any occasion. Choose from our cookie collection, and our best-selling Alfalfa Honey Granola,.</p>
+            </section>    
+            <section class="productView-images">
+                <figure class="productView-image">
+                    <div class="productView-img-container">
+                            <img class="lazyload productView-image--default" src="https://cdn1.bigcommerce.com/server1000/41d70/product_images/uploaded_images/special-occasion-527x630.jpg">
+                    </div>
+                </figure>
+            </section>
+            <section class="productView-details">
+                    <div class="category-description-block">
+                        <div class="m-b-30">
+                            <h3>custom favors</h3>
+                            <p>We will work with you to customize your party favors for your next special occasion, event or celebration.  Together, we will craft a unique and delicious selection which makes a wonderful parting gift as well as a memorable treat.  It would give us great pleasure to be part of your special event.</p>        
+                        </div>
+                        <div class="m-b-30">
+                            <h3>corporate gifts</h3>
+                            <p>For corporate gifts you can select from an assortment of our tasty sweets or customize your own special package.</p>
+                        </div>
+                        <a href="#" class="button" data-reveal-id="inquire-form">inquire</a>
+
+                        <div id="inquire-form" class="modal" data-reveal>
+                                <div class="modal-header">
+                                    <h2 class="modal-header-title">Tell us a little more about your event</h2>
+                                    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+                                        <span aria-hidden="true">&#215;</span>
+                                    </a>
+                                </div>
+                            <div class="modal-body">
+                                <iframe src="https://form.jotform.us/form/21587519935163" width="100%" height="500" frameborder="0"></iframe>
+                                <p>We are excited at the opportunity to be a finishing detail at your event. We'll be sure to answer your inquiry within a timely manner.</p>
+                                <p class="m-b-30">Thank you for your interest!</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

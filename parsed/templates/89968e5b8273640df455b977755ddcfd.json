@@ -1,1 +1,1 @@
-{"components/ob-custom/ob-store-logo-mobile":"<a href=\"{{urls.home}}\">\r\n    <img class=\"header-logo-image\" src=\"{{cdn 'assets/img/logo-mob.png'}}\" alt=\"{{settings.store_logo.title}}\" title=\"{{settings.store_logo.title}}\">\r\n</a>\r\n    \n"}
+{"components/ob-custom/ob-store-logo-mobile":"<a href=\"{{urls.home}}\">\r\n    <img class=\"header-logo-image\" src=\"{{cdn 'assets/img/logo-mob.png'}}\" alt=\"{{settings.store_logo.title}}\" title=\"{{settings.store_logo.title}}\">\r\n</a>\r\n    \r\n"}

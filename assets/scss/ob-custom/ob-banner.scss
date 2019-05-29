@@ -101,10 +101,10 @@
         margin-bottom: 10px;
     }
     .banner-content{
-        top: auto;
+        top: 20px;
         left: auto;
         right: 30px;
-        bottom: 20px;
+        bottom: auto;
         @media only screen and (max-width:1023px){
             right: 10px;
             bottom: 0px;
